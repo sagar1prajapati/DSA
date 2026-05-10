@@ -1,0 +1,239 @@
+Capacity Planning Kya Hai?
+Simple shabdon mein:
+
+Tumhara system kitna load handle kar sakta hai, aur usse zyada aane par kya hoga?
+
+Teen cheezein decide karni hain:
+
+Throughput — kitne requests per second (QPS/RPS)
+
+Latency — kitni der mein reply milega (ms)
+
+Saturation point — kahan se system breakdown shuru hota hai
+
+Real example:
+Ek WhatsApp group mein 200 log hain. Subah 8 baje sab "Good Morning" bhejte hain.
+Agar tera server sirf 100 requests/sec handle karta hai, toh 200 requests aayengi toh 100 log fail ho jayenge — yeh capacity planning failure hai.
+
+🔢 Step 1: Traffic Estimation — Ground Up
+1.1 Daily Active Users se Shuru
+hinglish
+DAU = 1 million (maan lo)
+Har user average:
+  - 10 reads
+  - 1 write
+  - 1 search
+Total actions/user/day = 12
+
+Total actions/day = 1M × 12 = 12M
+1.2 QPS (Queries Per Second) Mein Convert
+hinglish
+Seconds in a day = 24 × 3600 = 86,400
+Average QPS = 12,000,000 / 86,400 ≈ 139 QPS
+Important: Ye average hai. Real mein traffic uniform nahi hota.
+
+1.3 Peak QPS — The Real Killer
+hinglish
+Peak factor = 5x (common for social apps)
+Peak QPS = 139 × 5 ≈ 700 QPS
+
+Morning 8-10 AM, evening 7-9 PM peak hota hai.
+1.4 Burst Traffic — Viral Moment
+hinglish
+Agar koi post viral ho jaye (Jaise CR7 post):
+  - Read QPS suddenly 700 se → 50,000 tak ja sakta hai
+  - Isliye auto-scaling + caching zaroori hai
+💾 Step 2: Storage Estimation — Data Ka Size Samjho
+2.1 Har Object Ka Size
+hinglish
+Example: Twitter tweet
+  - Tweet ID: 8 bytes
+  - User ID: 8 bytes
+  - Text: 280 chars = 280 bytes
+  - Timestamp: 8 bytes
+  - Metadata (likes, retweets count): 50 bytes
+  - Overhead (database ka internal): ~100 bytes
+
+Total per tweet ≈ 450 bytes ≈ 0.45 KB
+2.2 Indexes — Jo Log Bhool Jaate Hain
+hinglish
+Database indexes:
+  - Primary key index: tweet_id
+  - Secondary indexes: user_id, timestamp, hashtags
+  
+Har index ≈ 30-50% of data size hota hai
+So indexes = 0.45 KB × 0.5 = 0.225 KB extra
+
+Effective size per tweet = 0.45 + 0.225 = 0.675 KB
+2.3 Replication aur Overhead
+hinglish
+Production mein hota hai:
+  - Primary + 2 replicas = 3x storage
+  - WAL (Write Ahead Log) = 0.2x
+  - Temp space for queries = 0.1x
+
+Total multiplier = 3 + 0.2 + 0.1 = 3.3x
+
+Final per tweet storage = 0.675 KB × 3.3 ≈ 2.2 KB
+2.4 Real Example: 1 Saal Ki Tweets
+hinglish
+1 billion tweets/year (India ka approx)
+Storage = 1B × 2.2 KB = 2.2 TB raw
+With replication (3 copies) = 6.6 TB
+With indexes = ~9 TB
+With backups = ~18 TB (backup 2x)
+🧠 Step 3: Memory Estimation — Cache Ka Game
+3.1 Working Set Concept
+hinglish
+80/20 rule:
+  - 20% data gets 80% traffic
+  - Yeh 20% data = "hot data"
+
+Maan lo total data = 100 TB
+Hot data = 20 TB
+3.2 Cache Mein Rakhenge Kitna?
+hinglish
+Typical caching strategy:
+  - Last 7 days hot data
+  - Per day: 1 TB new hot data
+  - 7 days = 7 TB
+
+Cache memory needed = 7 TB
+But 7 TB RAM impossible hai ek server mein.
+Toh distributed caching (Redis Cluster) lagana padega.
+
+3.3 Memory per Request
+hinglish
+Har request ke liye temporary memory:
+  - Request object: 1 KB
+  - Response object: 10 KB
+  - Query execution: 50 KB
+  - Connection buffer: 10 KB
+
+Total per request ≈ 71 KB
+
+Peak QPS = 10,000 pe:
+  - Memory for in-flight requests = 10,000 × 71 KB ≈ 710 MB
+  - Yeh sirf active requests ke liye
+🌐 Step 4: Network Bandwidth Estimation
+4.1 Bandwidth Formula
+hinglish
+Bandwidth needed = (Average request size + response size) × Peak QPS
+
+Example:
+  - Request: 1 KB
+  - Response: 50 KB
+  - Peak QPS: 10,000
+
+Bandwidth = (1 + 50) × 10,000 = 510,000 KB/sec = 510 MB/sec
+4.2 Network Card Capacity
+hinglish
+- 1 Gbps card = 125 MB/s theoretical
+- Real throughput = ~100 MB/s
+- Isliye 510 MB/s ke liye ~6 network cards chahiye (bonding)
+
+Ya better: 10 Gbps card lagao
+4.3 Intra-DC vs External Traffic
+hinglish
+Internal (same data center):
+  - Web server → Cache server
+  - Cache miss → DB server
+  - Latency: 0.5 ms
+
+External (user → server):
+  - India to Mumbai server: 10 ms
+  - India to US server: 200 ms
+  - Isliye region-based deployment zaroori hai
+🧮 Step 5: CPU aur Core Estimation
+5.1 Har Core Kitna Handle Karega?
+hinglish
+Typical numbers (real benchmarking se):
+  - Simple JSON API: 500-1000 QPS/core
+  - With DB query: 50-100 QPS/core
+  - With image processing: 5-10 QPS/core
+  - With ML inference: 1-2 QPS/core
+
+Example: Video encoding
+  - Har video chahiye 10 seconds CPU time
+  - 100 videos/minute = 1000 seconds CPU per minute
+  - Isliye parallel processing with GPU
+5.2 Core Count Calculation
+hinglish
+Target Peak QPS = 10,000
+Per core capacity (API + DB) = 200 QPS
+
+Cores needed = 10,000 / 200 = 50 cores
+
+With overhead (context switch, GC, etc) = +30%
+Total cores = 65 cores
+
+Servers (16 cores each) = 65/16 ≈ 5 servers
+⚠️ Step 6: Bottlenecks — Real Problems
+6.1 Database Connection Pool
+hinglish
+Har DB connection = ~2 MB memory + 1 core thread
+Max connections = cores × 2
+
+16 core server → max 32 DB connections
+Agar QPS zyada hai toh connection queue lagega
+6.2 Disk IOPS — Hidden Bottleneck
+hinglish
+HDD: 100-200 random IOPS
+SSD: 50,000-100,000 IOPS
+NVMe: 500,000+ IOPS
+
+Example: 
+  - 10,000 write QPS
+  - HDD impossible (needs 10,000 IOPS)
+  - SSD min 20,000 IOPS chahiye
+6.3 Lock Contention — Multithreading Ka Dushman
+hinglish
+Agar 50 threads ek hi lock pe wait karein:
+  - Effective throughput = single thread
+  - Java synchronized, Python GIL example
+
+Solution: 
+  - Shard karo (hash based)
+  - Lock-free data structures
+  - Read-write locks
+📊 Step 7: Real Production Formula (Mera Personal Experience Se)
+hinglish
+Effective Capacity = (Hardware Limit × 0.7) - (Bottleneck Penalty)
+
+Jahaan:
+  - 0.7 = safe margin (30% headroom for spikes)
+  - Bottleneck Penalty = slowest component ka effect
+
+Example:
+  - CPU limit = 10,000 QPS
+  - DB limit = 5,000 QPS
+  - Network limit = 20,000 QPS
+  - Bottleneck = DB (5,000)
+
+Effective = 5,000 × 0.7 = 3,500 QPS safe
+🎯 Step 8: Interview Mein Kaise Impress Karein?
+Ye Batana Ki Tum Depth Jaante Ho:
+Not just QPS — but P95, P99 latency
+
+Not just storage — but WAL, indexes, compaction
+
+Not just servers — but rack, DC, region redundancy
+
+Not just average — but traffic pattern (poisson vs uniform)
+
+Example Answer (Hinglish Mein):
+"Sir, maine maan liya DAU 10M hai.
+Average QPS ~10k aayega, peak ~50k.
+Har request 50KB ki hai, toh bandwidth ~2.5 GBps chahiye.
+Database mein indexing + replication se effective storage 3x ho jayega.
+Sabse bada bottleneck hoga DB connections, isliye read-heavy hai toh Redis cache lagana padega with 80% hit rate.
+Aur cache ke liye working set ~5TB hai, isliye distributed Redis cluster with 30 nodes.
+Sab server 60% utilization pe rakhenge taaki spike handle ho sake."
+
+🔥 Last Tip: Yaad Rakhna
+Cheez	Formula
+Peak QPS	Avg QPS × (2 to 10)
+Storage with replication	Raw × (3 to 5)
+Cache memory	Working set × 1.5
+Servers needed	(Cores required / cores per server) × 1.3
+Response time budget	Network + Queue + Processing
