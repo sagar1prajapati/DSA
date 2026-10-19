@@ -1,0 +1,1064 @@
+
+COMPLETE DSA PATTERNS & SUBPATTERNS ROADMAP
+
+1. ARRAYS & TRAVERSAL
+- Linear traversal
+- Reverse traversal
+- Multi-pass traversal
+- In-place modification
+- Cyclic indexing
+- Fast read/write pointer
+- Index mapping
+- Frequency counting
+
+2. TWO POINTERS
+- Opposite-direction pointers
+- Same-direction pointers
+- Fast and slow pointers
+- Read/write pointers
+- Converging pointers
+- Pair/triplet search
+- Partition pointers
+- Multiple-array pointers
+- Inward scanning from both ends
+
+3. SLIDING WINDOW
+- Fixed-size window
+- Variable-size window
+- Expand and shrink
+- Longest valid window
+- Shortest valid window
+- Fixed-window frequency map
+- At most K distinct elements
+- Exactly K distinct elements
+- Monotonic deque window
+- Sliding-window maximum/minimum
+
+4. PREFIX SUM & DIFFERENCE ARRAYS
+- Prefix sum
+- Prefix product
+- Prefix/suffix combination
+- 2D prefix sum
+- Range sum queries
+- Prefix sum + HashMap
+- Difference array
+- Range update queries
+- Prefix XOR
+- Sweep-line accumulation
+
+5. HASHING & FREQUENCY COUNTING
+- HashSet membership
+- HashMap frequency
+- Complement lookup
+- Group by signature
+- First/last occurrence map
+- Prefix sum + frequency map
+- Deduplication
+- Index-to-value mapping
+- Counting pairs/triples
+- Custom hash keys
+
+6. BINARY SEARCH
+- Classic binary search
+- Lower bound / first true
+- Upper bound / first greater
+- First and last occurrence
+- Binary search on answer
+- Search in rotated array
+- Search in nearly sorted data
+- Peak finding
+- Binary search on 2D matrices
+- Binary search on real numbers
+- Exponential search
+- Binary search on monotonic predicates
+
+7. SORTING
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
+- Counting Sort
+- Radix Sort
+- Bucket Sort
+
+8. PARTITIONING
+- Lomuto partition
+- Hoare partition
+- Dutch National Flag
+- Quickselect partition
+- Stable partition
+- Three-way partition
+
+9. SELECTION & ORDER STATISTICS
+- Kth smallest/largest
+- Quickselect
+- Median finding
+- Top K elements
+- Smallest missing positive
+- Streaming order statistics
+
+10. MERGE-BASED TECHNIQUES
+- Merge two sorted arrays
+- Merge K sorted lists
+- Count inversions
+- Reverse pairs
+- Interval merging
+- Divide-and-merge
+
+11. CYCLIC PLACEMENT
+- Cyclic Sort
+- Place each number at its correct index
+- Find missing numbers
+- Find duplicates
+- First missing positive
+
+12. SWEEP LINE
+- Event sorting
+- Start/end event processing
+- Overlap counting
+- Maximum concurrent intervals
+- Skyline-style problems
+
+13. LINKED LIST
+- Traversal
+- Insertion/deletion
+- Reverse list
+- Reverse in groups
+- Dummy node
+- Merge lists
+- Split list
+- Reorder list
+
+14. FAST & SLOW POINTERS
+- Cycle detection
+- Cycle entry
+- Middle node
+- Palindrome list
+- Happy number
+- Cycle length
+
+15. LINKED LIST REWIRING
+- Reverse sublist
+- Reverse nodes in groups
+- Swap pairs
+- Remove Nth node from end
+- Rotate list
+- Partition list
+- Copy list with random pointer
+
+16. STACK
+- Balanced parentheses
+- Expression evaluation
+- Infix/postfix conversion
+- Undo operations
+- Nested structures
+- Iterative DFS
+
+17. MONOTONIC STACK
+- Next greater element
+- Next smaller element
+- Previous greater element
+- Previous smaller element
+- Stock span
+- Largest rectangle in histogram
+- Maximal rectangle
+- Sum of subarray minimums
+
+18. QUEUE & DEQUE
+- Circular queue
+- Queue using stacks
+- Stack using queues
+- Deque operations
+- BFS queue
+- Monotonic deque
+
+19. MONOTONIC QUEUE
+- Sliding-window maximum/minimum
+- Window optimization
+- Maintaining candidate indices
+- DP optimization with deque
+
+20. EXPRESSION & PARSING
+- Operator precedence
+- Postfix evaluation
+- Calculator problems
+- String parsing
+- Nested parentheses
+- Recursive descent basics
+
+21. RECURSION
+- Base cases
+- Recursive decomposition
+- Multiple recursive calls
+- Tail recursion
+- Recursion on indices
+- Recursion on structures
+
+22. DIVIDE AND CONQUER
+- Merge Sort
+- Quick Sort
+- Binary search
+- Closest pair
+- Majority element
+- Recursive matrix operations
+
+23. BACKTRACKING
+- Choose-explore-undo
+- Subsets
+- Permutations
+- Combinations
+- Combination Sum
+- Duplicate handling
+
+24. CONSTRAINT-BASED SEARCH
+- N-Queens
+- Sudoku solver
+- Word search
+- Graph coloring
+- Crossword-style constraints
+
+25. GENERATE ALL POSSIBILITIES
+- Power set
+- Balanced parentheses
+- Phone keypad combinations
+- Palindrome partitioning
+- Expression generation
+
+26. PRUNING
+- Early rejection
+- Feasibility bounds
+- Branch and bound
+- Symmetry breaking
+- Memoized search
+- Constraint propagation
+
+27. MEET IN THE MIDDLE
+- Split search space
+- Subset sums
+- Two-half enumeration
+- Combine sorted half-results
+
+28. TREE DFS
+- Preorder
+- Inorder
+- Postorder
+- Recursive DFS
+- Iterative DFS
+- Path-based traversal
+
+29. TREE BFS
+- Level-order traversal
+- Zigzag traversal
+- Level averages
+- Right-side view
+- Minimum depth
+- Maximum width
+
+30. TREE PROPERTIES
+- Height/depth
+- Diameter
+- Balance checking
+- Symmetry
+- Subtree matching
+- Identical trees
+
+31. TREE PATH PATTERNS
+- Root-to-leaf paths
+- Path sum
+- Maximum path sum
+- All-path enumeration
+- Ancestor paths
+- Path through a node
+
+32. LOWEST COMMON ANCESTOR
+- Binary-tree LCA
+- BST LCA
+- Parent-pointer LCA
+- LCA with preprocessing
+- Distance between nodes
+
+33. BST OPERATIONS
+- Search
+- Insert
+- Delete
+- Validate BST
+- Kth smallest/largest
+- Predecessor/successor
+- Range queries
+
+34. TREE CONSTRUCTION
+- Build from traversals
+- Sorted array to BST
+- Construct from level order
+- Serialize/deserialize
+
+35. TREE TRANSFORMATIONS
+- Invert tree
+- Flatten tree
+- Recover swapped BST
+- Connect next pointers
+- Prune tree
+- Subtree replacement
+
+36. ADVANCED TREE QUERIES
+- Euler tour
+- Binary lifting
+- Tree diameter techniques
+- Rerooting DP
+- Heavy-light decomposition
+- Centroid decomposition
+
+37. HEAP FUNDAMENTALS
+- Min-heap
+- Max-heap
+- Heapify
+- Insertion
+- Deletion
+- Heapsort
+
+38. TOP K
+- K largest/smallest
+- Kth largest in stream
+- Frequent elements
+- Closest points
+- Smallest range
+
+39. TWO-HEAP TECHNIQUE
+- Running median
+- Median of data stream
+- Balancing lower and upper halves
+
+40. K-WAY MERGE
+- Merge K sorted lists
+- Merge K arrays
+- Smallest range across lists
+- Multiway merge
+
+41. GREEDY HEAP
+- Task scheduling
+- CPU scheduling
+- Connect ropes
+- Optimal merging
+- Reorganize string
+- Frequency-based scheduling
+
+42. LAZY HEAP / STALE ENTRIES
+- Dijkstra
+- Mutable priorities using duplicate entries
+- Stale-entry removal
+- Event scheduling
+
+43. GREEDY CHOICE
+- Local optimum
+- Exchange argument
+- Earliest finish
+- Smallest/largest feasible choice
+
+44. INTERVAL PROBLEMS
+- Merge intervals
+- Insert interval
+- Interval intersection
+- Erase overlaps
+- Meeting Rooms
+- Minimum arrows
+
+45. SCHEDULING
+- Activity selection
+- Job sequencing
+- Deadline scheduling
+- CPU scheduling
+- Weighted interval scheduling
+
+46. RESOURCE ALLOCATION
+- Minimum platforms
+- Meeting Rooms II
+- Assign tasks
+- Distribute resources
+- Capacity constraints
+
+47. TWO-CHOICE GREEDY
+- Jump Game
+- Gas Station
+- Reachability
+- Minimum jumps
+- Circular route feasibility
+
+48. GREEDY WITH SORTING
+- Minimize maximum difference
+- Assign cookies
+- Boats to Save People
+- Pair matching
+- Optimal ordering
+
+49. GREEDY WITH HEAP
+- Refueling stops
+- IPO
+- Course scheduling
+- Task scheduling
+- Huffman coding
+
+50. ADVANCED GREEDY
+- Matroid-style selection
+- Sweep-line greedy
+- Greedy proof by exchange
+- Approximation techniques
+
+51. MEMOIZATION
+- Recursion + cache
+- State definition
+- Overlapping subproblems
+- Memoized DFS
+
+52. TABULATION
+- Bottom-up DP
+- Base-state initialization
+- Transition order
+- Iterative state computation
+
+53. 1D DYNAMIC PROGRAMMING
+- Fibonacci
+- Climbing Stairs
+- House Robber
+- Minimum cost
+- Decode Ways
+
+54. GRID / 2D DP
+- Unique Paths
+- Obstacles
+- Minimum Path Sum
+- Falling Path
+- Grid state transitions
+
+55. KNAPSACK DP
+- 0/1 Knapsack
+- Unbounded Knapsack
+- Bounded Knapsack
+- Subset Sum
+- Partition Equal Subset Sum
+
+56. COIN & SUM DP
+- Coin Change minimum coins
+- Number of combinations
+- Target Sum
+- Ways to form a total
+
+57. SUBSEQUENCE DP
+- Longest Increasing Subsequence (LIS)
+- Longest Common Subsequence (LCS)
+- Longest Common Substring
+- Edit Distance
+- Shortest Common Supersequence
+
+58. STRING DP
+- Palindrome subsequence
+- Palindrome partitioning
+- Regex matching
+- Wildcard matching
+- Distinct subsequences
+
+59. INTERVAL DP
+- Matrix-chain multiplication
+- Burst Balloons
+- Optimal merge costs
+- Palindrome partitioning
+- Triangulation
+
+60. STATE-MACHINE DP
+- Stock buy/sell
+- Cooldown
+- Transaction limits
+- Holding/not holding states
+- Alternating states
+
+61. TREE DP
+- Tree Robber
+- Independent set
+- Subtree aggregation
+- Rerooting
+- DP over children
+
+62. GRAPH DP
+- DAG longest path
+- Path counting
+- Bitmask states
+- Shortest paths in DAG
+
+63. BITMASK DP
+- Traveling Salesperson
+- Assignment problems
+- Subset transitions
+- Minimum-cost matching
+
+64. DIGIT DP
+- Count numbers in a range
+- Digit restrictions
+- Digit sum
+- Tight/loose bounds
+- Leading zeros
+
+65. PROBABILITY & EXPECTATION DP
+- Expected moves
+- Random processes
+- Probability of reaching a state
+
+66. DP OPTIMIZATION
+- Space compression
+- Rolling arrays
+- Monotonic optimization
+- Divide-and-conquer optimization
+- Convex hull trick
+
+67. MULTI-DIMENSIONAL DP
+- Multiple capacities
+- Multiple strings
+- Multiple sequences
+- Multi-parameter states
+
+68. GRAPH REPRESENTATION
+- Adjacency list
+- Adjacency matrix
+- Edge list
+- Weighted/unweighted graphs
+- Directed/undirected graphs
+
+69. GRAPH DFS
+- Connected components
+- Reachability
+- Cycle detection
+- Path exploration
+- Flood fill
+
+70. GRAPH BFS
+- Shortest path in unweighted graphs
+- Level traversal
+- Multi-source BFS
+- Grid BFS
+- State-space BFS
+
+71. GRID & MATRIX TRAVERSAL
+- Number of Islands
+- Surrounded Regions
+- Flood Fill
+- Rotting Oranges
+- Shortest path in a grid
+- Boundary traversal
+
+72. CYCLE DETECTION
+- Undirected DFS/BFS
+- Directed DFS colors
+- Recursion stack
+- Union-Find
+- Cycle reconstruction
+
+73. TOPOLOGICAL SORTING
+- Kahn's algorithm
+- DFS ordering
+- Course Schedule
+- Dependency resolution
+- Cycle detection in DAGs
+
+74. BIPARTITE GRAPHS
+- Two-coloring
+- BFS coloring
+- DFS coloring
+- Odd-cycle detection
+
+75. UNION-FIND / DSU
+- Find/union
+- Path compression
+- Union by rank/size
+- Connectivity
+- Redundant edges
+- Component counting
+
+76. SHORTEST PATHS
+- BFS
+- 0–1 BFS
+- Dijkstra
+- Bellman-Ford
+- Floyd-Warshall
+- DAG shortest path
+
+77. MINIMUM SPANNING TREE
+- Kruskal
+- Prim
+- Edge sorting
+- DSU-based selection
+
+78. STRONGLY CONNECTED COMPONENTS
+- Kosaraju
+- Tarjan
+- Component condensation graph
+
+79. BRIDGES & ARTICULATION POINTS
+- Discovery times
+- Low-link values
+- Critical edges
+- Critical vertices
+
+80. ADVANCED GRAPH SEARCH
+- Bidirectional BFS
+- A*
+- IDDFS
+- State-space search
+- Shortest path with constraints
+
+81. EULERIAN & HAMILTONIAN PROBLEMS
+- Eulerian path/circuit
+- Hierholzer
+- Hamiltonian path
+- TSP connections
+
+82. NETWORK FLOW
+- Max flow
+- Min cut
+- Ford-Fulkerson
+- Edmonds-Karp
+- Dinic
+- Bipartite matching
+
+83. ADVANCED GRAPH DP
+- DAG DP
+- Tree-to-graph transformations
+- Bitmask graph DP
+- Rerooting and path queries
+
+84. STRING MANIPULATION
+- Reverse
+- Rotation
+- Parsing
+- Normalization
+- Character replacement
+
+85. TRIE / PREFIX TREE
+- Insert/search
+- Prefix matching
+- Word dictionary
+- Autocomplete
+- Wildcard search
+
+86. TRIE VARIANTS
+- Bitwise trie
+- Binary XOR trie
+- Compressed trie
+- Prefix-count trie
+
+87. KMP
+- Prefix-function/LPS array
+- Pattern search
+- Periodic strings
+
+88. Z-ALGORITHM
+- Z-array
+- Pattern matching
+- Prefix matches
+
+89. ROLLING HASH
+- Rabin-Karp
+- Substring equality
+- Duplicate substrings
+- Collision handling
+
+90. SUFFIX STRUCTURES
+- Suffix array
+- LCP array
+- Suffix automaton
+- Suffix tree concepts
+
+91. PALINDROME ALGORITHMS
+- Expand around center
+- Manacher's algorithm
+- Palindrome radii
+- Palindromic tree concepts
+
+92. STRING MATCHING VARIANTS
+- Multi-pattern matching
+- Aho-Corasick
+- Wildcard matching
+- Approximate matching
+
+93. BASIC BIT OPERATIONS
+- AND
+- OR
+- XOR
+- NOT
+- Left/right shifts
+- Set/clear/toggle/test a bit
+
+94. BIT TRICKS
+- Check power of two
+- Isolate lowest set bit
+- Count set bits
+- Remove lowest set bit
+
+95. XOR PATTERNS
+- Single Number
+- Missing Number
+- Prefix XOR
+- Pairwise XOR
+- XOR basis concepts
+
+96. BITMASKING
+- Represent subsets
+- Subset enumeration
+- Bitmask states
+- Permission flags
+
+97. BITMASK DP
+- Assignment
+- TSP
+- Subset transitions
+- State compression
+
+98. BITWISE TRIES
+- Maximum XOR pair
+- Maximum XOR subarray
+- Minimum XOR queries
+
+99. ADVANCED BIT TECHNIQUES
+- Brian Kernighan's algorithm
+- Gray code
+- SOS DP
+- Bitset optimization
+
+100. ARITHMETIC
+- GCD
+- LCM
+- Euclidean algorithm
+- Overflow-safe arithmetic
+
+101. PRIME NUMBERS
+- Trial division
+- Sieve of Eratosthenes
+- Segmented sieve
+- Primality tests
+
+102. MODULAR ARITHMETIC
+- Modulo properties
+- Modular inverse
+- Fast exponentiation
+- Modular division
+
+103. COMBINATORICS
+- Factorials
+- Permutations
+- Combinations
+- Pascal's triangle
+- Binomial coefficients
+
+104. COUNTING TECHNIQUES
+- Inclusion-exclusion
+- Pigeonhole principle
+- Combinatorial counting
+
+105. NUMBER REPRESENTATION
+- Base conversion
+- Binary/hexadecimal
+- Digit extraction
+- Palindrome numbers
+
+106. FAST EXPONENTIATION
+- Binary exponentiation
+- Modular power
+- Matrix exponentiation
+
+107. ADVANCED NUMBER THEORY
+- Extended Euclid
+- Chinese Remainder Theorem
+- Fermat's little theorem
+- Euler's totient
+
+108. MATHEMATICAL SEQUENCES
+- Arithmetic progressions
+- Geometric progressions
+- Recurrence relations
+- Fibonacci identities
+
+109. POINT & VECTOR GEOMETRY
+- Distance
+- Dot product
+- Cross product
+- Orientation
+
+110. LINE & SEGMENT PROBLEMS
+- Intersection
+- Collinearity
+- Point-on-segment
+- Segment overlap
+
+111. CONVEX HULL
+- Graham scan
+- Monotonic chain
+
+112. SWEEP-LINE GEOMETRY
+- Segment intersections
+- Event processing
+- Active-set maintenance
+
+113. CLOSEST-PAIR PROBLEMS
+- Closest pair of points
+- Divide-and-conquer geometry
+
+114. POLYGON PROBLEMS
+- Point in polygon
+- Area
+- Shoelace formula
+- Polygon intersections
+
+115. FENWICK TREE / BIT
+- Prefix sums
+- Point updates
+- Range sums
+- Coordinate-compressed frequencies
+
+116. SEGMENT TREE
+- Range sum/min/max
+- Point updates
+- Range updates
+- Lazy propagation
+
+117. SEGMENT TREE VARIANTS
+- Persistent segment tree
+- Dynamic segment tree
+- Merge-sort tree
+- 2D segment tree
+
+118. SPARSE TABLE
+- Static range minimum/maximum
+- Idempotent queries
+- Range GCD
+
+119. SQUARE ROOT DECOMPOSITION
+- Block decomposition
+- Range queries
+- Range updates
+- Mo's algorithm
+
+120. MO'S ALGORITHM
+- Offline range queries
+- Add/remove operations
+- Frequency maintenance
+
+121. ORDERED DATA STRUCTURES
+- Balanced BST
+- Order statistics
+- Coordinate compression
+- Ordered sets and maps
+
+122. RANGE UPDATES
+- Difference arrays
+- Lazy propagation
+- Fenwick-based updates
+- Offline updates
+
+123. PERSISTENT DATA STRUCTURES
+- Persistent segment tree
+- Versioned queries
+- Historical versions
+
+124. DYNAMIC CONNECTIVITY
+- DSU with rollback
+- Offline edge additions/removals
+- Divide-and-conquer over time
+
+125. ADVANCED QUERY OPTIMIZATION
+- Heavy-light decomposition
+- Centroid decomposition
+- Parallel binary search
+
+126. HASHING + LINKED LIST
+- LRU Cache
+- Insertion-order maps
+
+127. HASHING + FREQUENCY LISTS
+- LFU Cache
+- Frequency-based eviction
+
+128. STACK DESIGN
+- Min Stack
+- Max Stack
+- Encoded stack
+
+129. QUEUE DESIGN
+- Circular queue
+- Deque
+- Queue using stacks
+
+130. HEAP + HASHMAP
+- Indexed priority queue
+- Frequency tracker
+- Lazy deletion
+
+131. MULTIPLE DATA STRUCTURES
+- RandomizedSet
+- RandomizedCollection
+- All O(1) data structure
+
+132. STREAMING DATA
+- Median Finder
+- Moving average
+- Top K frequent stream
+
+133. NESTED STRUCTURES
+- Flatten nested iterator
+- Iterator over trees
+- Peeking iterator
+
+134. RANGE/DATA QUERY DESIGN
+- Snapshot Array
+- Time-Based Key-Value Store
+- Range sum structures
+
+135. CUSTOM DATA STRUCTURES
+- Trie
+- Autocomplete system
+- Browser history
+- File-system simulation
+
+136. COORDINATE COMPRESSION
+- Map large values to ranks
+- Preserve ordering
+- Compress query coordinates
+
+137. OFFLINE PROCESSING
+- Sort queries
+- Answer in batches
+- Process events in a suitable order
+
+138. RANDOMIZED ALGORITHMS
+- Reservoir sampling
+- Randomized quickselect
+- Random hashing
+
+139. PROBABILITY & SAMPLING
+- Uniform random selection
+- Weighted sampling
+- Streaming samples
+
+140. GAME THEORY
+- Nim
+- Sprague-Grundy
+- Winning/losing states
+- Minimax
+
+141. MINIMAX & GAME SEARCH
+- Alpha-beta pruning
+- Memoized game states
+- Optimal opponent play
+
+142. BRANCH AND BOUND
+- Search with bounds
+- Pruning infeasible solutions
+- Optimization search
+
+143. ADVANCED OPTIMIZATION DP
+- Convex hull trick
+- Divide-and-conquer DP optimization
+- Knuth optimization
+
+144. AUTOMATA & STATE MACHINES
+- DFA
+- KMP automaton
+- Finite-state transitions
+- State compression
+
+145. AMORTIZED ANALYSIS
+- Dynamic array resizing
+- Stack-based processing
+- Potential method
+
+146. ONLINE ALGORITHMS
+- Streaming updates
+- Online scheduling
+- Maintain results as input arrives
+
+147. APPROXIMATION & HEURISTICS
+- Approximation algorithms
+- Local search
+- Greedy heuristics for hard problems
+
+
+PATTERN RECOGNITION CHEAT SHEET
+
+- Pair sum equals target: HashMap or Two Pointers
+- Longest/shortest contiguous subarray: Sliding Window or Prefix Sum
+- Repeated range sums: Prefix Sum, Fenwick Tree or Segment Tree
+- Sorted array or monotonic condition: Binary Search or Two Pointers
+- Next greater element: Monotonic Stack
+- Top K elements: Heap or Quickselect
+- Generate all combinations: Backtracking
+- Repeated recursive states: Dynamic Programming or Memoization
+- Shortest path in unweighted graph: BFS
+- Shortest path with nonnegative weights: Dijkstra
+- Connectivity after merging groups: Union-Find
+- Tasks with dependencies: Topological Sort
+- Overlapping time intervals: Sorting or Sweep Line
+- Prefix-based word search: Trie
+- Range queries with updates: Fenwick Tree or Segment Tree
+- Cycle in linked list: Fast and Slow Pointers
+- Optimization with many choices: DP, Greedy or Binary Search on Answer
+- Very large input streams: Streaming or Online Algorithms
+
+
+RECOMMENDED LEARNING ORDER
+
+PHASE 1: FOUNDATIONS
+- Arrays
+- Strings
+- Time and space complexity
+- Hashing
+- Basic sorting
+
+PHASE 2: LINEAR PATTERNS
+- Two Pointers
+- Sliding Window
+- Prefix Sum
+- Binary Search
+
+PHASE 3: DATA STRUCTURES
+- Linked Lists
+- Stacks
+- Queues
+- Monotonic Stack
+- Heaps
+
+PHASE 4: RECURSIVE THINKING
+- Recursion
+- Divide and Conquer
+- Backtracking
+
+PHASE 5: TREES AND GRAPHS
+- DFS
+- BFS
+- Binary Search Trees
+- Topological Sort
+- Union-Find
+- Shortest Paths
+
+PHASE 6: DYNAMIC PROGRAMMING
+- 1D DP
+- Grid DP
+- Knapsack
+- Subsequences
+- State-machine DP
+
+PHASE 7: ADVANCED PATTERNS
+- Tries
+- Greedy Algorithms
+- Bit Manipulation
+- Range-query Data Structures
+- Advanced DP
+
+STUDY METHOD
+- Understand the pattern first.
+- Solve 2 easy problems.
+- Solve 3–5 medium problems.
+- Practice mixed problems.
+- Analyze time and space complexity.
+- Implement solutions in Java.
+- Revisit problems you could not solve independently.
+
+NOTE
+This is a comprehensive practical roadmap, not a universally exhaustive list. Some patterns overlap, and many advanced topics are primarily needed for competitive programming or specialized interviews.
